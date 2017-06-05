@@ -1,0 +1,45 @@
+
+
+.slide {position:relative;margin:0 auto;background:transparent;}
+
+.slide, .slide input, .slide img {width:711px;height:400px; }
+
+.slide input {display:block;position:absolute;left:0;top:0;opacity:0;cursor:pointer;margin:0;padding:0; }
+
+.slide img {position:absolute;left:-3px;top:0;box-shadow:0 0 30px #bbb;}
+
+.slide img {visibility:hidden;opacity:0; } 
+
+.slide img {transition:all .9s ease} .slide span {transition:all .5s ease-out; }
+
+.slide input:checked + img, .slide input:checked + img + span {visibility:visible;opacity:1}
+
+.slide input:checked + img + span {bottom:0px;background:rgba(0,0,0,.3);font-size:2em;}
+
+.slide input:checked {display:none;}
+.slide input:nth-child(1) {z-index:10}
+.slide input:nth-child(4) {z-index:9}
+.slide input:nth-child(7) {z-index:8}
+.slide input:nth-child(10) {z-index:7}
+.slide input:nth-child(13) {z-index:6}
+.slide input:nth-child(16) {z-index:5}
+.slide input:nth-child(19) {z-index:4}
+.slide input:nth-child(22) {z-index:3}
+.slide input:nth-child(25) {z-index:2}
+.slide input:nth-child(28) {z-index:1}
+
+.slide input:nth-child(1):checked ~ input:nth-child(4), 
+.slide input:nth-child(4):checked ~ input:nth-child(7),
+.slide input:nth-child(7):checked ~ input:nth-child(10),
+.slide input:nth-child(10):checked ~ input:nth-child(13), 
+.slide input:nth-child(13):checked ~ input:nth-child(16),
+.slide input:nth-child(16):checked ~ input:nth-child(19),
+.slide input:nth-child(19):checked ~ input:nth-child(22),
+.slide input:nth-child(22):checked ~ input:nth-child(25),
+.slide input:nth-child(25):checked ~ input:nth-child(28) {z-index:10;}
+.clear{clear:both;}
+
+@media only screen and (max-width:970px){.slide, .slide img, .slide input {width:533px;height:300px;} .slide span {width:533px;bottom:300px;}}
+@media only screen and (max-width:720px){.slide, .slide img, .slide input {width:444px;height:250px;} .slide span {width:444px;bottom:250px;} .atas h1, .slide input:checked + img + span {font-size:1.5em;}}
+@media only screen and (max-width:500px){.slide, .slide img, .slide input {width:356px;height:200px;} .slide span {width:356px;bottom:200px;} .atas h1, .slide input:checked + img + span {font-size:1.3em;}}
+@media only screen and (max-width:420px){.slide, .slide img, .slide input {width:240px;height:135px;} .slide span {width:240px;bottom:135px;} .atas h1 {font-size:1.3em;} .slide input + img + span {display:none;z-index:-9999;}}
